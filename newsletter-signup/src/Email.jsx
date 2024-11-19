@@ -1,21 +1,8 @@
 import React, { useState } from "react";
 
-function Email({ handleEmail, email }) {
-  const [emailError, setEmailError] = useState("");
-
-  function validateEmail(e) {
-    const value = e.target.value;
-    handleEmail(e);
-    if (!value) {
-      setEmailError("This field cannot be empty");
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
-      setEmailError("valid email required");
-    } else {
-      setEmailError("");
-    }
-  }
+function Email({ handleEmail, email, emailError, handleSubmit, handleFocus }) {
   return (
-    <form action="">
+    <form onSubmit={handleSubmit} action="">
       <div className="flex flex-col relative mt-[30px] gap-1">
         <div className="flex justify-between">
           <label
@@ -31,12 +18,15 @@ function Email({ handleEmail, email }) {
 
         <input
           className={`error-message ${
-            emailError ? "border-primary-tomato" : "border-Grey"
+            emailError
+              ? "border-primary-tomato text-primary-tomato"
+              : "border-Grey"
           } p-[10px] pl-[20px] rounded-[10px] border-solid border-Grey border-[1px] outline-none`}
           type="email"
           placeholder="email@company.com"
-          onChange={validateEmail}
+          onChange={handleEmail}
           value={email}
+          onBlur={handleFocus}
         />
         <input
           className="font-semibold relative mt-[10px] cursor-pointer bg-Dark-slateGray text-White p-[15px] rounded-[10px]"
