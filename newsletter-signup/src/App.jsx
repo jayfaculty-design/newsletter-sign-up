@@ -58,8 +58,8 @@ function App() {
           </p>
           <p className="text-Charcoal-Grey">
             A confirmation email has been sent to{" "}
-            <span className="font-bold">ash@loremcompany.com.</span> Please open
-            it and click the button inside to confirm your subscription
+            <span className="font-bold">{email}</span> Please open it and click
+            the button inside to confirm your subscription
           </p>
         </div>
 
