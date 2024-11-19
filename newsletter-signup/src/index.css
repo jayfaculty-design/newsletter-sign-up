@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
 :root {
   --primary-tomato: hsl(4, 100%, 67%);
   --Dark-slateGray: hsl(234, 29%, 20%);
@@ -12,7 +10,13 @@
   --White: hsl(0, 0%, 100%);
 }
 * {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
+}
+body {
+  font-size: clamp(14px, 4vw, 16px);
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
 }
 .top-container {
   background: url(/images/illustration-sign-up-mobile.svg);
@@ -22,5 +26,6 @@
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
 }
-
-
+input[type="email"] {
+  transition: all 0.3s ease-in-out; 
+}
