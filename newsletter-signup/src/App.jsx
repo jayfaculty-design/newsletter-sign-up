@@ -70,24 +70,41 @@ function App() {
           Dismiss message
         </button>
       </div>
-      <div className="top-container w-full bg-"></div>
-      <div className="p-[30px] flex flex-col gap-5">
-        <h1 className="text-[24px] font-bold text-Dark-slateGray">
-          Stay Updated!
-        </h1>
-        <p className="text-[16px] text-Charcoal-Grey font-normal">
-          Join 6000+ product managers receiving monthly updates on:
-        </p>
-        <Lists list={"Product discovery and  building what matters"} />
-        <Lists list={"Measuring to ensure updates are a success"} />
-        <Lists list={"And much more!"} />
-        <Email
-          handleEmail={handleEmail}
-          emailError={error}
-          email={email}
-          handleSubmit={handleSubmit}
-          handleFocus={handleFocus}
-        />
+      <div className="top-container w-full lg:hidden"></div>
+
+      <div className="lg:absolute inset-0 flex items-center justify-center">
+        <div className="p-[30px] flex flex-col gap-5 lg:bg-White lg:flex-row lg:rounded-[20px]  lg:w-[65%] lg:h-[90vh] lg:justify-between  lg:gap-10 lg:items-center">
+          <div className="content-items lg:ml-5 lg:mb-8 relative lg:h-[70%] lg:w-[600px]">
+            <div className="flex flex-col gap-5">
+              <h1 className="lg:text-[40px] text-[24px] font-bold text-Dark-slateGray">
+                Stay Updated!
+              </h1>
+              <p className="text-[16px] text-Charcoal-Grey font-normal">
+                Join 6000+ product managers receiving monthly updates on:
+              </p>
+
+              <Lists list={"Product discovery and  building what matters"} />
+              <Lists list={"Measuring to ensure updates are a success"} />
+              <Lists list={"And much more!"} />
+
+              <Email
+                handleEmail={handleEmail}
+                emailError={error}
+                email={email}
+                handleSubmit={handleSubmit}
+                handleFocus={handleFocus}
+              />
+            </div>
+          </div>
+
+          <div className="hidden lg:block rounded-[20px] desktop-img size-[600px] h-[550px] bg-pattern-desktop bg-no-repeat">
+            {/* <img
+              className="hidden lg:inline"
+              src="/images/illustration-sign-up-desktop.svg"
+              alt=""
+            /> */}
+          </div>
+        </div>
       </div>
     </>
   );

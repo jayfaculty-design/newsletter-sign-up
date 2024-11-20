@@ -3,7 +3,7 @@ import React, { useState } from "react";
 function Email({ handleEmail, email, emailError, handleSubmit, handleFocus }) {
   return (
     <form onSubmit={handleSubmit} action="">
-      <div className="flex flex-col relative mt-[30px] gap-1">
+      <div className="flex flex-col relative mt-[30px] gap-1 lg:mt-[-10px]">
         <div className="flex justify-between">
           <label
             className="text-[13px] font-semibold text-Dark-slateGray"

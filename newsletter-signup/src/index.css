@@ -26,6 +26,7 @@ body {
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
 }
+
 input[type="email"] {
   transition: all 0.3s ease-in-out; 
 }
@@ -34,4 +35,9 @@ input[type="email"] {
 }
 .modal-popup.show {
   display: flex;
+}
+@media screen and (min-width: 976px) {
+  body {
+    background: var(--Charcoal-Grey);
+  }
 }
